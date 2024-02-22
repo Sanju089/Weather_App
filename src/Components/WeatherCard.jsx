@@ -23,7 +23,7 @@ const WeatherCard = ({
 }) => {
   const [icon, setIcon] = useState(sun);
   const { time } = useDate();
-
+console.log(iconString)
   useEffect(() => {
     if (iconString) {
       if (iconString.toLowerCase().includes("cloud")) {
