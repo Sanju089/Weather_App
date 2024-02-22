@@ -9,17 +9,17 @@ function App() {
   const { weather, thisLocation, values, place, setPlace } = useStateContext();
   const [isCelsius, setIsCelsius] = useState(true); // State to track selected unit
 
-  // Function to convert temperature from Celsius to Fahrenheit
+ 
   const convertToCelsius = (tempFahrenheit) => {
     return ((tempFahrenheit - 32) * 5) / 9;
   };
 
-  // Function to convert temperature from Fahrenheit to Celsius
+ 
   const convertToFahrenheit = (tempCelsius) => {
     return ((tempCelsius * 9) / 5 + 32).toFixed(2);
   };
 
-  // Function to handle unit toggle
+
   const toggleUnit = () => {
     setIsCelsius(!isCelsius);
   };
