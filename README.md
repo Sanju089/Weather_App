@@ -6,7 +6,7 @@ This project is a single-page weather forecast application designed to provide u
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** React,ContextApi, TailwindCSS
 
 **Server:** Node
 
@@ -22,13 +22,13 @@ This project utilizes the Visual Crossing Weather API provided by RapidAPI to fe
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Sanju089/Weather_App.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Weather_App
 ```
 
 Install dependencies
