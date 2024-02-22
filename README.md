@@ -43,3 +43,6 @@ Start the server
   npm run dev
 ```
 
+## Demo
+
+[You can access the live version of the application here.]("https://sanju089.github.io/Weather_App/")
