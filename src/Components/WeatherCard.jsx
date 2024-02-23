@@ -20,6 +20,7 @@ const WeatherCard = ({
   conditions,
   mint,
   maxt,
+  unit
 }) => {
   const [icon, setIcon] = useState(sun);
   const { time } = useDate();
@@ -51,7 +52,7 @@ console.log(iconString)
       <div className="flex w-full just-center, items-center gap-4 mt-2 mb-1">
         <img src={icon} alt="weather_icon" />
         <p className="font-bold text-5xl flex justify-center items-center">
-          {temperature} &deg;C 
+          {temperature} {unit === 'metric' ? '°C' : '°F'}
         </p>
       </div>
 
@@ -59,12 +60,12 @@ console.log(iconString)
 
 <div className="w-full flex justify-between item-center">
   <span className="font-semibold text-lg">Min Temp:</span>
-  <span className="text-lg">{mint} &deg;C </span>
+  <span className="text-lg">{mint} {unit === 'metric' ? '°C' : '°F'} </span>
 </div>
 
 <div className="w-full flex justify-between item-center">
   <span className="font-semibold text-lg">Max Temp:</span>
-  <span className="text-lg">{maxt} &deg;C</span>
+  <span className="text-lg">{maxt} {unit === 'metric' ? '°C' : '°F'}</span>
 </div>
 
 </div>
@@ -82,7 +83,7 @@ console.log(iconString)
           Humidity <p className="font-normal">{humidity} gm/m&#179;</p>
         </p>
       </div>
-      <div className="w-full p-3 mt-4 flex justify-between items-center">
+      <div className="w-full p-3 flex justify-between items-center">
         <p className="font-semibold text-lg">Heat Index</p>
         <p className="text-lg">{heatIndex ? heatIndex : "N/A"}</p>
       </div>

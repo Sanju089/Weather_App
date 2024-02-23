@@ -31,7 +31,7 @@ export const StateContextProvider = ({ children }) => {
 
         try {
             const response = await axios.request(options);
-            // console.log(response.data)
+            console.log(response.data)
             const thisData = Object.values(response.data.locations)[0]
             setLocation(thisData.address)
             setValues(thisData.values)

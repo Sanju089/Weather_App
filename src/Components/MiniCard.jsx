@@ -8,7 +8,7 @@ import snow from '../assets/icons/snow.png'
 import storm from '../assets/icons/storm.png'
 import wind from '../assets/icons/windy.png'
 
-const MiniCard = ({ time, temp, iconString }) => {
+const MiniCard = ({ time, temp, iconString ,unit}) => {
   const [icon, setIcon] = useState()
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const MiniCard = ({ time, temp, iconString }) => {
       <div className='w-full flex justify-center items-center flex-1'>
         <img src={icon} alt="forecast not available" className='w-[4rem] h-[4rem]' />
       </div>
-      <p className='text-center font-bold'>{temp}&deg;C</p>
+      <p className='text-center font-bold'>{temp} {unit === 'metric' ? '°C' : '°F'}</p>
     </div>
   )
 }

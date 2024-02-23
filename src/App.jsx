@@ -8,8 +8,9 @@ function App() {
   const [input, setInput] = useState("");
   const { weather, thisLocation, values, place, setPlace } = useStateContext();
   const [isCelsius, setIsCelsius] = useState(true); // State to track selected unit
+  const [unit, setUnit] = useState('metric'); // Default to metric (Celsius)
 
- 
+ console.log(weather)
   const convertToCelsius = (tempFahrenheit) => {
     return ((tempFahrenheit - 32) * 5) / 9;
   };
@@ -22,6 +23,8 @@ function App() {
 
   const toggleUnit = () => {
     setIsCelsius(!isCelsius);
+    setUnit(unit === 'metric' ? 'imperial' : 'metric');
+
   };
 
   const submitCity = () => {
@@ -68,6 +71,7 @@ function App() {
           mint={ isCelsius ? weather.mint : convertToFahrenheit(weather.mint)}
           maxt={ isCelsius?weather.maxt : convertToFahrenheit(weather.maxt)}
           toggleUnit={toggleUnit}
+          unit={unit}
         />
         
         <div className="flex justify-center gap-8 flex-wrap w-full lg:w-3/5 ">
@@ -76,6 +80,7 @@ function App() {
               <MiniCard
                 key={curr.datetime}
                 time={curr.datetime}
+          unit={unit}
                 temp={isCelsius ? curr.temp : convertToFahrenheit(curr.temp)}
                 iconString={curr.conditions}
                 mint={isCelsius ? curr.mint : convertToFahrenheit(curr.mint)}
